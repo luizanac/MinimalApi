@@ -1,10 +1,12 @@
-﻿namespace Minimal;
+﻿using Minimal.Services.Enums;
 
-public class ServiceResponse<T>
+namespace Minimal.Services.Extensions;
+
+public class ServiceResponse : IServiceResponse
 {
 	public string Message { get; set; } = "We have an error :o";
 	public EServiceStatus Status { get; set; }
-	public T? Data { get; set; }
+	public object? Data { get; set; }
 	public Dictionary<string, List<string>>? Errors { get; set; }
 
 	public ServiceResponse(EServiceStatus status)
@@ -12,7 +14,7 @@ public class ServiceResponse<T>
 		Status = status;
 	}
 
-	public ServiceResponse(T data)
+	public ServiceResponse(object data)
 	{
 		Status = EServiceStatus.Ok;
 		Data = data;
@@ -42,4 +44,12 @@ public class ServiceResponse<T>
 			}
 		}
 	}
+}
+
+public interface IServiceResponse
+{
+	public string Message { get; set; }
+	public EServiceStatus Status { get; set; }
+	public object? Data { get; set; }
+	public Dictionary<string, List<string>>? Errors { get; set; }
 }

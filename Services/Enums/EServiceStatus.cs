@@ -1,5 +1,4 @@
-﻿
-namespace Minimal;
+﻿namespace Minimal.Services.Enums;
 
 public enum EServiceStatus
 {
