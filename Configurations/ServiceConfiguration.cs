@@ -2,7 +2,7 @@
 
 public static class ServiceConfiguration
 {
-	public static void AddServices(this IServiceCollection services)
+	public static void ConfigureServices(this IServiceCollection services)
 	{
 		services.AddScoped<IUserService, UserService>();
 	}

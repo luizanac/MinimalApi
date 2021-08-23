@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="Luizanac.QueryExtensions" Version="1.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 </Project>
